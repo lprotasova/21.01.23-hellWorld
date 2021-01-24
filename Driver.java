@@ -1,6 +1,6 @@
 public class Driver {
     public static void main(String[] args) {
-        //test constructor 1, modifyVelocity, and both moves
+        //test PhysicsItem constructor 1, modifyVelocity, and both moves
         /* PhysicsItem item1 = new PhysicsItem(4.1, 5.2);
         item1.testPrint();
         item1.modifyVelocity(new Pair(-3, -6));
@@ -18,7 +18,7 @@ public class Driver {
         item2.testPrint(); */
 
         //test constructor 3 and collision
-        PhysicsItem item3Ship = new PhysicsItem(5.5, 15, .5, .5, 0, 0);
+        /* PhysicsItem item3Ship = new PhysicsItem(5.5, 15, .5, .5, 0, 0);
         PhysicsItem item4Asteroid = new PhysicsItem(5, 2.5, .5, .5, 0, .5);
 
         for (int i = 0; i < 24; i++) {
@@ -32,6 +32,20 @@ public class Driver {
             System.out.println("-----Moving...");
             item3Ship.move();
             item4Asteroid.move();
+        } */
+
+        //test Scene constructor 1, addPhysicsItem, and checkForCollisionByIndeces
+        Scene scene1Road = new Scene();
+        scene1Road.testPrint();
+
+        scene1Road.addPhysicsItem(new PhysicsItem(2, 2, 2, 1, .5, 0));
+        scene1Road.addPhysicsItem(new PhysicsItem(10, 2, 2, 1, -.5, 0));
+        scene1Road.testPrint();
+
+        while (scene1Road.checkForCollisionByIndeces(0, 1) == false) {
+            scene1Road.moveAllItems();
+
+            scene1Road.testPrint();
         }
     }
 }

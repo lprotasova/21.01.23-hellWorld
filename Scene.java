@@ -9,7 +9,9 @@ public class Scene {
     }
 
     //start with some items already
-    //do that
+    public Scene(ArrayList<PhysicsItem> startItems) {
+        items = startItems;
+    }
 
     public void addPhysicsItem(PhysicsItem newItem) {
         items.add(newItem);
@@ -40,5 +42,9 @@ public class Scene {
 
     public boolean checkForCollisionByIndeces(int index1, int index2) {
         return items.get(index1).collidesWith(items.get(index2));
+    }
+
+    public ArrayList<PhysicsItem> getItems() {
+        return items;
     }
 }

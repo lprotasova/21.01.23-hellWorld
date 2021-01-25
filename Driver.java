@@ -1,3 +1,6 @@
+import java.awt.Color;
+import java.util.ArrayList;
+
 public class Driver {
     public static void main(String[] args) {
         //test PhysicsItem constructor 1, modifyVelocity, and both moves
@@ -35,7 +38,7 @@ public class Driver {
         } */
 
         //test Scene constructor 1, addPhysicsItem, and checkForCollisionByIndeces
-        Scene scene1Road = new Scene();
+        /* Scene scene1Road = new Scene();
         scene1Road.testPrint();
 
         scene1Road.addPhysicsItem(new PhysicsItem(2, 2, 2, 1, .5, 0));
@@ -46,6 +49,30 @@ public class Driver {
             scene1Road.moveAllItems();
 
             scene1Road.testPrint();
+        } */
+
+        //test Scene constructor 2, ScenePanel constructor 2, and SceneFrame
+        PhysicsItem item5Snake = new PhysicsItem(100, 100, 50, 10, .5, 0, Color.GREEN, true);
+        PhysicsItem item6Fruit = new PhysicsItem(400, 100, 5, 5, 0, 0, Color.RED, false);
+        
+        ArrayList<PhysicsItem> itemsArray1 = new ArrayList<PhysicsItem>();
+        itemsArray1.add(item5Snake);
+        itemsArray1.add(item6Fruit);
+
+        Scene scene2 = new Scene(itemsArray1);
+        scene2.testPrint();
+
+        ScenePanel panel1 = new ScenePanel(scene2);
+        SceneFrame frame1 = new SceneFrame(panel1);
+
+        try {
+            //for (int i = 0; i < 5; i++) {
+            while (true) {
+                frame1.move();
+                Thread.sleep((long)(100));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

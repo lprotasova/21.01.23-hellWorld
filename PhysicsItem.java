@@ -1,15 +1,21 @@
+import java.awt.*;
+
 public class PhysicsItem {
     private Pair location;
     private Pair velocity;
     private Pair radius;
 
+    private Color drawColor;
+    private boolean isFilled;
+
     //start with 0 velocity and 0 radius
     public PhysicsItem(double startXLoc, double startYLoc) {
         location = new Pair(startXLoc, startYLoc);
-
         velocity = new Pair();
-
         radius = new Pair();
+
+        setColor(Color.BLACK);
+        setFilled(true);
     }
 
     //start with 0 velocity
@@ -18,6 +24,9 @@ public class PhysicsItem {
         location = new Pair(startXLoc, startYLoc);
         radius = new Pair(xRadius, yRadius);
         velocity = new Pair();
+
+        setColor(Color.BLACK);
+        setFilled(true);
     }
 
     //start with location, velocity, and radius set
@@ -26,6 +35,21 @@ public class PhysicsItem {
         location = new Pair(startXLoc, startYLoc);
         velocity = new Pair(startXVel, startYVel);
         radius = new Pair(xRadius, yRadius);
+
+        setColor(Color.BLACK);
+        setFilled(true);
+    }
+
+    //start with location, velocity, radius, color, and fill set
+    public PhysicsItem(double startXLoc, double startYLoc, double xRadius, 
+        double yRadius, double startXVel, double startYVel, Color col,
+        boolean fill) {
+        location = new Pair(startXLoc, startYLoc);
+        velocity = new Pair(startXVel, startYVel);
+        radius = new Pair(xRadius, yRadius);
+
+        setColor(col);
+        setFilled(fill);
     }
 
     public Pair getCurrentLocation() {
@@ -89,5 +113,21 @@ public class PhysicsItem {
         System.out.println("Current location: [" + location.x + ", " + location.y + "]");
         System.out.println("Going: [" + velocity.x + ", " + velocity.y + "]");
         System.out.println("Radius (1/2 of size): [" + radius.x + ", " + radius.y + "]");
+    }
+
+    public void setColor(Color newColor) {
+        drawColor = newColor;
+    }
+
+    public Color getColor() {
+        return drawColor;
+    }
+
+    public void setFilled(boolean fill) {
+        isFilled = fill;
+    }
+
+    public boolean getFilled() {
+        return isFilled;
     }
 }

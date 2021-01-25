@@ -51,9 +51,9 @@ public class Driver {
             scene1Road.testPrint();
         } */
 
-        //test Scene constructor 2, ScenePanel constructor 2, and SceneFrame
+        /* //test Scene constructor 2, ScenePanel constructor 2, and SceneFrame
         PhysicsItem item5Snake = new PhysicsItem(100, 100, 50, 10, .5, 0, Color.GREEN, true);
-        PhysicsItem item6Fruit = new PhysicsItem(400, 100, 5, 5, 0, 0, Color.RED, false);
+        PhysicsItem item6Fruit = new PhysicsItem(400, 100, 5, 5, 0, 0, Color.RED, true);
         
         ArrayList<PhysicsItem> itemsArray1 = new ArrayList<PhysicsItem>();
         itemsArray1.add(item5Snake);
@@ -73,6 +73,14 @@ public class Driver {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } */
+
+        //test SceneFrame constructor 2,
+        String[] cutsceneFiles = new String[6];
+        for (int index = 0; index < 6; index++) {
+            cutsceneFiles[index] = "Images/1_" + (index + 1) + ".png";
         }
+        
+        SceneFrame frame2 = new SceneFrame(new ScenePanel(), cutsceneFiles);
     }
 }

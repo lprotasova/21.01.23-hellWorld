@@ -1,6 +1,9 @@
 import java.awt.Color;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
 public class Driver {
     public static void main(String[] args) {
         //test PhysicsItem constructor 1, modifyVelocity, and both moves
@@ -51,8 +54,8 @@ public class Driver {
             scene1Road.testPrint();
         } */
 
-        /* //test Scene constructor 2, ScenePanel constructor 2, and SceneFrame
-        PhysicsItem item5Snake = new PhysicsItem(100, 100, 50, 10, .5, 0, Color.GREEN, true);
+        //test Scene constructor 2, ScenePanel constructor 2, and SceneFrame
+        /* PhysicsItem item5Snake = new PhysicsItem(100, 100, 50, 10, .5, 0, Color.GREEN, true);
         PhysicsItem item6Fruit = new PhysicsItem(400, 100, 5, 5, 0, 0, Color.RED, true);
         
         ArrayList<PhysicsItem> itemsArray1 = new ArrayList<PhysicsItem>();
@@ -75,12 +78,25 @@ public class Driver {
             e.printStackTrace();
         } */
 
-        //test SceneFrame constructor 2,
-        String[] cutsceneFiles = new String[6];
-        for (int index = 0; index < 6; index++) {
-            cutsceneFiles[index] = "Images/1_" + (index + 1) + ".png";
+        //test CutscenePanel
+        /* JFrame testFrame = new JFrame("Hellllll");
+        testFrame.add(new CutscenePanel("images/1_1.png"));
+        testFrame.setVisible(true);
+        testFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        testFrame.setSize(400, 700);
+        testFrame.setLocation(200, 200); */
+
+        //test SceneFrame constructor 2, CURRENTLY DOES NOT WORK
+        /* String[] cutsceneFiles = new String[7];
+        for (int index = 0; index < 7; index++) {
+            cutsceneFiles[index] = "images/1_" + (index + 1) + ".png";
         }
-        
-        SceneFrame frame2 = new SceneFrame(new ScenePanel(), cutsceneFiles);
+
+        ScenePanel panel2 = new ScenePanel();
+
+        SceneFrame frame2 = new SceneFrame(panel2, cutsceneFiles); */
+
+        //test HellGame
+        HellGame game1 = new HellGame();
     }
 }

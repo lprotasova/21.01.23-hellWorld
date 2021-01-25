@@ -46,4 +46,8 @@ public class ScenePanel extends JPanel{
     public void move(int numTicks) {
         scene.moveAllItems(numTicks);
     }
+
+    public void addItemToScene(PhysicsItem item) {
+        scene.addPhysicsItem(item);
+    }
 }

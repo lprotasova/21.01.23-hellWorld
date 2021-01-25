@@ -1,7 +1,9 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class CutscenePanel extends JPanel {
@@ -19,6 +21,10 @@ public class CutscenePanel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        System.out.println(bgImage.getWidth() + " " + bgImage.getHeight());
         g.drawImage(bgImage, 0, 0, null);
+
+        /* g.setColor(Color.RED);
+        g.fillRect(0, 0, 100, 100); */
     }
 }

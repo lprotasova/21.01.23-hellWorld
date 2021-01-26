@@ -56,6 +56,10 @@ public class PhysicsItem {
         return location;
     }
 
+    public Pair getCurrentVelocity() {
+        return velocity;
+    }
+
     public Pair getRadius() {
         return radius;
     }
